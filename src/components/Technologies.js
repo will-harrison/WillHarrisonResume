@@ -61,7 +61,7 @@ const Tech = styled.div`
 const Box = styled.div` 
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 const Centered = styled.div`
