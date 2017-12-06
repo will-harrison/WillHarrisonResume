@@ -4,17 +4,16 @@ import styled from 'styled-components';
 const Header = () => {
   return (
     <Container>
-      <P>Hello, my name is <Name>Will Harrison</Name>. I am a Javascript and React developer from Sandpoint, ID.
+      <P>Hello, my name is <Name>Will Harrison</Name>. I am a React and Node developer from Sandpoint, ID.
       I focus on excellence in user experience, product design, and technical quality.</P>
     </Container>
   );
 };
 
 const Container = styled.div.attrs({ className: "measure-wide" }) `
-  display: flex;
-  flex-direction: column;
-  margin: 35px 30%;
-  `;
+  text-align: center;
+  margin: 35px auto;
+`;
 
 const Name = styled.span.attrs({ className: "athelas f2" }) `
   
@@ -22,9 +21,9 @@ const Name = styled.span.attrs({ className: "athelas f2" }) `
 
 const P = styled.div.attrs({ className: "f3" }) `
   font-size: 18px;
-  justify-content: center;
   line-height: 1.5em;
-  justify-content: space-evenly;  
+  justify-content: center;
+  align-items: center;
 `;
 
 export default Header;
