@@ -18,5 +18,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://will-harrison.github.io/myapp"
+  "homepage": "http://will-harrison.github.io/WillHarrisonResume"
 }
