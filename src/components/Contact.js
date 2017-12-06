@@ -8,8 +8,8 @@ const Contact = () => {
         <Method><a href="mailto:willharrison@gmail.com">willharrison@gmail.com</a></Method>
         <Method><a href="tel:208-627-3231">208-627-3231</a></Method>
         <Method><a href="/">raygun-labs.com</a></Method>
-        <Method><a href="http://github.com/will-harrison">Github</a></Method>
-        <Method><a href="http://linkedin/in/willharrison">LinkedIn</a></Method>
+        <Method><a href="http://github.com/will-harrison">github.com/will-harrison</a></Method>
+        <Method><a href="http://linkedin/in/willharrison">linkedin.com/in/willharrison</a></Method>
       </Row>
     </Container>
   );

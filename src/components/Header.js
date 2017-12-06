@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Container>
       <P>Hello, my name is <Name>Will Harrison</Name>. I am a Javascript and React developer from Sandpoint, ID.
-      If I'm not freelancing for some of the finest tech companies, I'm working remotely on projects for clients all over the world.</P>
+      I focus on excellence in user experience, product design, and technical quality.</P>
     </Container>
   );
 };
