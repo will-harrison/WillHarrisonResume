@@ -8,7 +8,12 @@ const ExperienceRole = ({ role }) => {
       <Col left flex1 horizontalCenter>
         <JobTitle>{role.title}</JobTitle>
         <JobList>
-          {role.companies.map(i => <JobListItem key={i}>{i}</JobListItem>)}
+          {role.companies.map((i, index) => (
+            <JobListItem key={index}>
+              <Timeline>{i.timeline}</Timeline>
+              <Job>{i.company}</Job>
+            </JobListItem>
+          ))}
         </JobList>
       </Col>
       <Col right flex3>
@@ -23,24 +28,37 @@ const ExperienceRole = ({ role }) => {
   );
 };
 
-const JobTitle = styled.div.attrs({ className: "f2 fw5" }) ``
+const JobTitle = styled.div.attrs({ className: "f3 fw5" })``
 
+const JobList = styled(UL).attrs({ className: "f4" })``
 
-const JobList = styled(UL).attrs({ className: "f4" }) ``
+const JobListItem = styled(LI).attrs({ className: "f4" })`
+  display: flex;
+  flex-direction: row;
+`
+const Timeline = styled.div.attrs({ className: 'f6' })`
+  flex: 1;
+  padding: 0 10px;
+  text-align: right;
+  align-self: center;
+  `
+const Job = styled.div`
+  flex: 1;
+  width: 175px;
+  font-size: 18px;
+`
 
-const JobListItem = styled(LI).attrs({ className: "f4" }) ``
+const Experience = styled.div.attrs({ className: "measure" })``
 
-const Experience = styled.div.attrs({ className: "measure" }) ``
-
-const ExperienceHeader = styled.div.attrs({ className: "f5" }) `
+const ExperienceHeader = styled.div.attrs({ className: "f5" })`
   padding-top: 5px;
 `
 
-const ExperienceExamples = styled(UL) ``
-const Example = styled(LI) ``
+const ExperienceExamples = styled(UL)``
+const Example = styled(LI)``
 
 
-const Col = styled(Column) `
+const Col = styled(Column)`
   padding-top: 20px;
   ${props => props.horizontalCenter ? `
     justify-content: flex-start; 
@@ -50,15 +68,13 @@ const Col = styled(Column) `
   };
   ${props => props.left ? `
     margin-right: 25px;
-    min-width: 45%;
   ` : false}
   ${props => props.right ? `
     margin-left: 25px;
-    min-width: 50%;
-    max-width: 55%;
+    padding-right: 50px;
   ` : false}
   ${props => props.flex1 ? `
-    flex: 1;
+    flex: 2;
   ` : false}
   ${props => props.flex3 ? `
     flex: 3;

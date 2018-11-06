@@ -10,16 +10,21 @@ const Header = () => {
   );
 };
 
-const Container = styled.div.attrs({ className: "measure-wide" }) `
+const Container = styled.div.attrs({ className: "measure-wide" })`
   text-align: center;
-  margin: 35px auto;
+  @media screen {
+    margin: 35px auto;
+  }
+  @media print {
+    margin: 10px auto;
+  }
 `;
 
-const Name = styled.span.attrs({ className: "athelas f2" }) `
+const Name = styled.span.attrs({ className: "athelas f2" })`
   
 `;
 
-const P = styled.div.attrs({ className: "f3" }) `
+const P = styled.div.attrs({ className: "f3" })`
   font-size: 18px;
   line-height: 1.5em;
   justify-content: center;

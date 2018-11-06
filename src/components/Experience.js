@@ -5,13 +5,13 @@ import { Row, HR } from '../styles/CommonStyles'
 
 const roles = [
   {
-    title: "Javascript Developer",
+    title: "Javascript/React",
     companies: [
-      'Raygun Labs',
-      'TripCraft',
-      'Market Igniter',
-      'Ziggie Ecommerce',
-      'Kochava'
+      { company: 'Raygun Labs', timeline: '2014 - Current' },
+      { company: 'TripCraft', timeline: '2017 - 2018' },
+      { company: 'Market Igniter', timeline: '2017' },
+      { company: 'Ziggie Ecommerce', timeline: '2016 - 2017' },
+      { company: 'Kochava', timeline: '2014' }
     ],
     experience: {
       header: `
@@ -28,11 +28,27 @@ const roles = [
     }
   },
   {
+    title: 'React Native',
+    companies: [
+      { company: 'Raygun Labs', timeline: '2017 - Current' },
+      { company: 'Graybox', timeline: '2018 - Current' }
+    ],
+    experience: {
+      header: `
+      I've been lead and primary developer for a React Native project that incorporates custom SVG animation, maps, camera and camera roll, geo-location, and other native features.
+      `,
+      examples: [
+        'React Native, Expo, Redux, React Navigation, Styled Components.',
+        'Self contained apps using SQLite and AsyncStorage for data storage.'
+      ]
+    }
+  },
+  {
     title: 'Retail Data Analyst',
     companies: [
-      'Coldwater Creek',
-      'HEB Grocery Company',
-      'Ziggie Ecommerce'
+      { company: 'Coldwater Creek', timeline: '2005 - 2014' },
+      { company: 'HEB Grocery Company', timeline: '2000 - 2005' },
+      { company: 'Ziggie Ecommerce', timeline: '2016 - 2017' }
     ],
     experience: {
       header: `
@@ -48,8 +64,8 @@ const roles = [
   {
     title: 'Business Analyst',
     companies: [
-      'Coldwater Creek',
-      'Ziggie Ecommerce'
+      { company: 'Coldwater Creek', timeline: '2011 - 2013' },
+      { company: 'Ziggie Ecommerce', timeline: '2016 - 2017' }
     ],
     experience: {
       header: `
@@ -71,6 +87,7 @@ const Experience = () => {
         <ExperienceRole role={roles[0]} />
         <ExperienceRole role={roles[1]} />
         <ExperienceRole role={roles[2]} />
+        <ExperienceRole role={roles[3]} />
       </Container>
       <HR />
     </div>
@@ -86,7 +103,7 @@ const Container = styled.div`
 
 
 
-const Company = styled(Row) `
+const Company = styled(Row)`
   line-height: 1em;
   margin-left: 60%;
   margin-top: 10px;
@@ -102,16 +119,16 @@ const Title = styled.div`
   font-family: "Montserrat", sans-serif;
 `;
 
-const UL = styled.ul.attrs({ className: "list f5" }) `
+const UL = styled.ul.attrs({ className: "list f5" })`
   padding: 0;
   padding-top: 5px;
 `;
 
-const LI = styled.li.attrs({ className: "list f5" }) `
+const LI = styled.li.attrs({ className: "list f5" })`
   padding: 5px 0;
 `;
 
-const P = styled.p.attrs({ className: "p f5 measure" }) `
+const P = styled.p.attrs({ className: "p f5 measure" })`
   padding-top: 25px;
 `;
 

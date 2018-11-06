@@ -8,15 +8,18 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 
 class App extends Component {
+
   render() {
     return (
-      <Container>
-        <Header />
-        <Technologies />
-        <Experience />
-        <Education />
-        <Contact />
-      </Container>
+      <div>
+        <Container>
+          <Header />
+          <Technologies />
+          <Experience />
+          <Education />
+          <Contact />
+        </Container>
+      </div>
     );
   }
 }
@@ -26,6 +29,7 @@ const Container = styled.div.attrs({
 }) `
   display: flex;
   flex-direction: column;
+
 `;
 
 export default App;

@@ -1,0 +1,6 @@
+I'd like to learn more about the Full Stack Engineer role you have available at Nike. I am an experienced Javascript Developer with a focus on the React ecosystem. I have experience with Node, Express, and Hapi servers. I have a background as a Retail Data Analyst, with 15 years of experience in SQL, and experience with noSql databases like Mongodb and Rethinkdb.
+
+If my skills and experience would add to the team, I'd love to talk more with you about the role.
+
+Thanks,
+Will Harrison

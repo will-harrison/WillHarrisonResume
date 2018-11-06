@@ -9,8 +9,11 @@ injectGlobal`
   body {
     color: rgba(0, 0, 0, .7);
     margin: 0;
-    border-top: 5px solid #336699;
-    border-bottom: 15px solid #336699;
+    @media screen and (min-width: 0px) {
+      border-top: 5px solid #336699;
+      border-bottom: 15px solid #336699;
+    }
+ 
   }
 `;
 

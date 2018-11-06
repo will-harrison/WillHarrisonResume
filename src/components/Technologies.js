@@ -9,7 +9,7 @@ const Technologies = () => {
       <Title>Technologies</Title>
       <Container>
         <Box>
-          <Centered><Tech>React JS</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
+          <Centered><Tech>React</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
           <Centered><Tech>Node</Tech><Icon><i className="icn icon-nodejs"></i></Icon></Centered>
           <Centered><Tech>Javascript</Tech><Icon><i className="icn icon-javascript"></i></Icon></Centered>
           <Centered><Tech>HTML</Tech><Icon><i className="icn icon-html5"></i></Icon></Centered>
@@ -17,9 +17,9 @@ const Technologies = () => {
         </Box>
         <Box></Box>
         <Box>
+          <Centered><Tech>React Native</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
           <Centered><Tech>NPM/Yarn</Tech><Icon><i className="icon-npm"></i></Icon></Centered>
           <Centered><Tech>MongoDB</Tech><Icon><i className="icon-mongodb"></i></Icon></Centered>
-          <Centered><Tech>MS SQL Server</Tech><Icon><i className="icon-mssql"></i></Icon></Centered>
           <Centered><Tech>Postgresql</Tech><Icon><i className="icon-postgres-alt"></i></Icon></Centered>
           <Centered><Tech>Terminal dweller</Tech><Icon><i className="icon-shell"></i></Icon></Centered>
         </Box>
@@ -29,17 +29,19 @@ const Technologies = () => {
 };
 
 const HR = styled.hr`
-width: 75%;
-border: 0; 
-height: 2px; 
-background-image: -webkit-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
-background-image: -moz-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
-background-image: -ms-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
-background-image: -o-linear-gradient(left, #f0f0f0, #336699, #f0f0f0); 
+  display: block;
+  background: transparent;
+  width: 75%;
+  border: none; 
+  height: 2px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #336699, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #336699, #f0f0f0); 
 `;
 
 const Container = styled.div`
-  width: 50%;
+  width: 75%;
   margin: 0px auto 10px;
   border: 1px solid #eee;
   border-radius: 3;
@@ -47,7 +49,12 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 50px;
+  @media screen {
+    margin-top: 50px;
+  }
+  @media print {
+    margin-top: 25px;
+  }
   font-size: 32px;
   text-align: center;
   background-color: #fff;

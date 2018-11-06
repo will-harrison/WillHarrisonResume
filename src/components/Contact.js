@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Contact = () => {
   return (
@@ -16,16 +16,23 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-margin: 100px 0 20px;
-`;
+  display: flex;
+  flex-direction: column;
+  @media screen {
+    margin: 100px 0 20px;
+  }
+  @media print {
+    margin: 50px 0 10px;
+  }
+
+
+`
 
 const Row = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-`;
+`
 
 
 const Method = styled.div`
@@ -35,6 +42,6 @@ const Method = styled.div`
     font-family: "Montserrat", sans-serif;
     color: #336699;
   }
-`;
+`
 
-export default Contact;
+export default Contact
