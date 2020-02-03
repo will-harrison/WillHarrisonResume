@@ -7,7 +7,8 @@ const roles = [
   {
     title: "Javascript/React",
     companies: [
-      { company: 'Raygun Labs', timeline: '2014 - Current' },
+      { company: 'RevUnit', timeline: '2019 - 2020' },
+      { company: 'Raygun Labs', timeline: '2014 - 2019' },
       { company: 'TripCraft', timeline: '2017 - 2018' },
       { company: 'Market Igniter', timeline: '2017' },
       { company: 'Ziggie Ecommerce', timeline: '2016 - 2017' },
@@ -20,6 +21,7 @@ const roles = [
     `,
       examples: [
         'React, Redux, React Router 4, and various styling libraries.',
+        'Graphql, Prisma, Apollo', 
         'Node, Express, Hapi, SocketIO.',
         'SQL Server, MySQL, PostgreSQL, Mongodb, and Rethinkdb.',
         'Experience working on existing code bases as well as starting projects from the ground up.',
@@ -84,10 +86,7 @@ const Experience = () => {
     <div>
       <Title>Experience</Title>
       <Container>
-        <ExperienceRole role={roles[0]} />
-        <ExperienceRole role={roles[1]} />
-        <ExperienceRole role={roles[2]} />
-        <ExperienceRole role={roles[3]} />
+        {roles.map((role, index) => <ExperienceRole role={roles[index]} key={index} />)}
       </Container>
       <HR />
     </div>
