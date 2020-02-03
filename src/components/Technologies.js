@@ -1,6 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import SVG from 'react-inlinesvg'
+import blah from '../assets/gql.svg'
 import "../App.css"
+
+
+const tech = [
+  {id: 1, name: "React", icon: "icon-reactjs"},
+  {id: 2, name: "Node", icon: "icon-nodejs"},
+  {id: 3, name: "Javascript", icon: "icon-javascript"},
+  {id: 4, name: "GraphQl", icon: blah},
+  {id: 5, name: "CSS", icon: "icon-css3"},
+  {id: 6, name: "React Native", icon: "icon-reactjs"},
+  {id: 7, name: "NPM/Yarn", icon: "icon-npm"},
+  {id: 8, name: "MongoDB", icon: "icon-mongodb"},
+  {id: 9, name: "Postgresql", icon: "icon-postgres-alt"},
+  {id: 10, name: "Terminal dweller", icon: "icon-shell"},
+]
 
 const Technologies = () => {
   return (
@@ -8,26 +24,34 @@ const Technologies = () => {
       <HR />
       <Title>Technologies</Title>
       <Container>
-        <Box>
-          <Centered><Tech>React</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
-          <Centered><Tech>Node</Tech><Icon><i className="icn icon-nodejs"></i></Icon></Centered>
-          <Centered><Tech>Javascript</Tech><Icon><i className="icn icon-javascript"></i></Icon></Centered>
-          <Centered><Tech>HTML</Tech><Icon><i className="icn icon-html5"></i></Icon></Centered>
-          <Centered><Tech>CSS</Tech><Icon><i className="icn icon-css3"></i></Icon></Centered>
-        </Box>
-        <Box></Box>
-        <Box>
-          <Centered><Tech>React Native</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
-          <Centered><Tech>NPM/Yarn</Tech><Icon><i className="icon-npm"></i></Icon></Centered>
-          <Centered><Tech>MongoDB</Tech><Icon><i className="icon-mongodb"></i></Icon></Centered>
-          <Centered><Tech>Postgresql</Tech><Icon><i className="icon-postgres-alt"></i></Icon></Centered>
-          <Centered><Tech>Terminal dweller</Tech><Icon><i className="icon-shell"></i></Icon></Centered>
-        </Box>
+        <Row>
+          {tech.map(t => (
+            <TechContainer key={t.id}>
+              <Tech>{t.name}</Tech>
+              <IconContainer><Icon className={`icn ${t.icon}`}></Icon></IconContainer>
+              <IconImage src={t.icon} />
+            </TechContainer>
+          ))}
+        </Row>
       </Container>
     </div>
   );
 };
 
+{/* <Box>
+  <Centered><Tech>React</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
+  <Centered><Tech>Node</Tech><Icon><i className="icn icon-nodejs"></i></Icon></Centered>
+  <Centered><Tech>Javascript</Tech><Icon><i className="icn icon-javascript"></i></Icon></Centered>
+  <Centered><Tech>GraphQl</Tech><Icon><IconImage src={blah} /></Icon></Centered>
+  <Centered><Tech>CSS</Tech><Icon><i className="icn icon-css3"></i></Icon></Centered>
+</Box>
+<Box>
+  <Centered><Tech>React Native</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
+  <Centered><Tech>NPM/Yarn</Tech><Icon><i className="icon-npm"></i></Icon></Centered>
+  <Centered><Tech>MongoDB</Tech><Icon><i className="icon-mongodb"></i></Icon></Centered>
+  <Centered><Tech>Postgresql</Tech><Icon><i className="icon-postgres-alt"></i></Icon></Centered>
+  <Centered><Tech>Terminal dweller</Tech><Icon><i className="icon-shell"></i></Icon></Centered>
+</Box> */}
 const HR = styled.hr`
   display: block;
   background: transparent;
@@ -40,12 +64,28 @@ const HR = styled.hr`
   background-image: -o-linear-gradient(left, #f0f0f0, #336699, #f0f0f0); 
 `;
 
-const Container = styled.div`
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`
+
+const Container = styled(Column)`
   width: 75%;
   margin: 0px auto 10px;
   border: 1px solid #eee;
   border-radius: 3;
   padding: 20px;
+  justify-content: space-evenly;
 `;
 
 const Title = styled.div`
@@ -61,42 +101,62 @@ const Title = styled.div`
   font-family: "Montserrat", sans-serif;
 `;
 
+const TechContainer = styled(Column)`
+  width: calc(75% / 4);
+  height: 111px;
+`
+
 const Tech = styled.div`
-  text-align: center;
+  justify-self: flex-start;
 `;
 
-const Box = styled.div` 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-`;
-
-const Centered = styled.div`
+const IconContainer = styled.div`
+  transition: color 0.5s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
-  width: 150, 
-  height: 150, 
-  fontSize: "72px",
-  color: #888;
-  transition: color 0.5s ease;
+  align-items: center;
 
     &:hover {
       color: #336699;
     }
 
-  > i {
-    font-size: 72px;
+  
+  > img {
+    &:hover {
+      color: #336699;
+    }
   }
-  `;
-
-const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 72px;
+  font-size: 55px;
   padding: 5px; 
+  text-align: center;
 `;
+
+const Icon = styled.i`
+  text-align: center;
+`
+
+const IconImage = styled(SVG)`
+  opacity: 70%;
+  width: 55px;
+  height: 55px;
+  padding: 5px;
+  
+  &:hover {
+    transition: color 0.5s ease;
+    opacity: 100%;
+    & path {
+      stroke: #336699;
+      fill: #336699;
+    }
+    & rect {
+      stroke: #336699;
+      fill: #336699;
+    }
+  }
+`
 
 export default Technologies;
