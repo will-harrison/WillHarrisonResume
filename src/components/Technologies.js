@@ -38,20 +38,6 @@ const Technologies = () => {
   );
 };
 
-{/* <Box>
-  <Centered><Tech>React</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
-  <Centered><Tech>Node</Tech><Icon><i className="icn icon-nodejs"></i></Icon></Centered>
-  <Centered><Tech>Javascript</Tech><Icon><i className="icn icon-javascript"></i></Icon></Centered>
-  <Centered><Tech>GraphQl</Tech><Icon><IconImage src={blah} /></Icon></Centered>
-  <Centered><Tech>CSS</Tech><Icon><i className="icn icon-css3"></i></Icon></Centered>
-</Box>
-<Box>
-  <Centered><Tech>React Native</Tech><Icon><i className="icn icon-reactjs"></i></Icon></Centered>
-  <Centered><Tech>NPM/Yarn</Tech><Icon><i className="icon-npm"></i></Icon></Centered>
-  <Centered><Tech>MongoDB</Tech><Icon><i className="icon-mongodb"></i></Icon></Centered>
-  <Centered><Tech>Postgresql</Tech><Icon><i className="icon-postgres-alt"></i></Icon></Centered>
-  <Centered><Tech>Terminal dweller</Tech><Icon><i className="icon-shell"></i></Icon></Centered>
-</Box> */}
 const HR = styled.hr`
   display: block;
   background: transparent;
